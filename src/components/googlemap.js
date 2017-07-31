@@ -1,20 +1,7 @@
 import { GoogleMap, Marker } from "react-google-maps";
-import {
-  default as React,
-  Component,
-  PropTypes,
-  Children,
-} from "react";
 
-const googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.27&libraries=places,geometry&key=YOUR_GOOGLE_MAPS_API_KEY_GOES_HERE"
+const googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.27&libraries=places,geometry&key=AIzaSyDq_OV8OiGs-QJLYueVCuLPhuWPrxxVJUM"
 
-export default class GoogleMap extends Component {
-  constructor(props){
-      super(props);
-}
-  render() {
-    return (
-      <div>
   <GoogleMap
     ref={props.onMapLoad}
     defaultZoom={3}
@@ -30,7 +17,3 @@ export default class GoogleMap extends Component {
       />
     ))}
   </GoogleMap>
-</div>
-);
-}
-}
