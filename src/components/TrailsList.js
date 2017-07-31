@@ -27,11 +27,9 @@ class TrailsList extends Component {
       <div className="app-body offset col-lg-10 col-lg-offset-1">
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
-              <h1>Category: {this.props.places}</h1>
+              <h1>this is the trailist page {this.props.places}</h1>
           </div>
-          {/*
-            Pass the following props to View: details and endpoint.
-            */}
+
         </div>
       </div>
     );
