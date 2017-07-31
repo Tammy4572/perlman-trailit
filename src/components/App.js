@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import '../App.css';
-import TralsList from './TrailsList'
-import GoogleMap from './googlemap.js';
+import '../styles/App.css';
+import Searchbox from './Searchbox';
+import Featuredloc from './Featuredloc'
+
+// import GoogleMap from './googlemap.js';
 const trailAPI = '76b8cb5f85aa3aea5703c33b6ebb90b6040d6008a514da965c5e3e4ad5b83380'
 
 
@@ -15,12 +17,14 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to Trail It Easy!</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <TrailsList/>
-     //    { <GoogleMap google={this.props.google} /> }
-     <GoogleMap />
+        <div className="App-intro">
+          <Searchbox />
+          <Featuredloc />
+        </div>
+
+{this.props.children}
+     {/* //    { <GoogleMap google={this.props.google} /> } */}
+     {/* <GoogleMap /> */}
       </div>
     );
   }
