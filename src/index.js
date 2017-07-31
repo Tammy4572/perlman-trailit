@@ -27,4 +27,3 @@ ReactDOM.render(
   </div>
 </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
-Contact
