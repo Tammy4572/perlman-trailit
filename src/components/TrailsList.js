@@ -1,37 +1,49 @@
 import React, {Component} from 'react';
+import { Link, Switch, Route, BrowserRouter } from 'react-router-dom';
+import AllTrails from './AllTrails';
+import Detail from './Detail';
+
 
 class TrailsList extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      'places': [],
-    }
+      places: []
+    };
   }
   componentDidMount() {
-
-      var url = 'https://crossorigin.me/https://api.transitandtrails.org/api/v1/trailheads/?key=76b8cb5f85aa3aea5703c33b6ebb90b6040d6008a514da965c5e3e4ad5b83380&callback=?'
-      fetch(url).then((res) => {
+       var headers = {
+               "method": "GET",
+               "Content-Type": "application/json",
+               "X-Mashape-Key": "E0wgmylcqimshyyMbitb6pMfqkNBp1HfFVNjsn3a6Agqh3YVFP",
+               "credentials": "include"
+       }
+      var url = ('https://trailapi-trailapi.p.mashape.com/?limit=25&q[activities_activity_type_name_eq]=hiking&radius=25')
+      fetch(url, {headers}).then((res) => {
         console.log(res)
-
         return res.json();
       }).then((data) => {
-        console.log(data)
+        // console.log(data)
+        this.setState({places: data.places})
         console.log(this.state.places)
-        this.setState({places: data})
 
       });
   }
 
   render() {
-    return (
-      <div className="app-body offset col-lg-10 col-lg-offset-1">
-        <div className="row">
-          <div className="col-lg-8 col-lg-offset-2">
-              <h1>this is the trailist page {this.props.places}</h1>
-          </div>
 
-        </div>
-      </div>
+    return (
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/TrailList" render={() => (<AllTrails trails={this.state.places}/>)} />
+            <Route exact path="/TrailList/:id" render={(props) => (<Detail {...props} trails={this.state.places}/>)} />
+
+          </Switch>
+        </BrowserRouter>
+
+
+
     );
   }
 }
