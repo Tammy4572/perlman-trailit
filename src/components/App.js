@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import '../styles/App.css';
+
 import Searchbox from './Searchbox';
 import Featuredloc from './Featuredloc';
 import { NavLink, Link } from 'react-router-dom';
@@ -24,7 +25,7 @@ class App extends Component {
           <Link to='/TrailList' className="btn btn-warning btn-lg">Find your dream trail NOW!</Link>
           <Featuredloc />
         </div>
-{this.props.children}
+        {this.props.children}
       </div>
     );
   }

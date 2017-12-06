@@ -18,13 +18,14 @@ ReactDOM.render(
                          <li><NavLink activeClassName="selected" className="nav-link" to="/">Home</NavLink></li>
                          <li><NavLink activeClassName="selected" className="nav-link" exact to="/TrailList">Find your trail</NavLink></li>
                          <li><NavLink activeClassName="selected" className="nav-link" to="/contact">Contact Us</NavLink></li>
-                  </ul>
-           </div>
-     </nav>
+                    </ul>
+               </div>
+          </nav>
    <Switch>
-      <Route exact path="/" component={App}/>
-      <Route path="/TrailList" component={TrailList}/>
-      <Route path="/TrailList/:id" component={Detail}/>
+        <Route exact path="/" component={App}/>
+        <Route path="/TrailList" component={TrailList}/>
+        <Route path="/TrailList/:id" component={Detail}/>
+        <Route path="/Contact" component={Contact}/>
     </Switch>
 
  </div>

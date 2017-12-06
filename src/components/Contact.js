@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import '../styles/App.css';
 
-export default class Contact extends Component{
+class Contact extends Component{
+     constructor(props){
+          super(props)
+     }
      render() {
           return (
-               <section id="contact">
+               <div id="contact">
                     <div className="section-content">
                          <h1 className="section-header">Get in <span className="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
                          <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
@@ -27,7 +31,9 @@ export default class Contact extends Component{
                               </form>
                          </div>
                     </div>
-               </section>
+               </div>
           )
      }
 }
+
+export default Contact;
